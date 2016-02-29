@@ -1,16 +1,22 @@
 #include <iostream>
 
+/**
+ * Recursively calculate the greatest common divisor of two integers.
+ *
+ * @param  a
+ *   The first integer.
+ * @param  b
+ *   The second integer.
+ *
+ * @return
+ *   The greatest common divisor.
+ */
 int gcd(int a, int b) {
-  //write your code here
-  int current_gcd = 1;
-  for (int d = 2; d <= a && d <= b; d++) {
-    if (a % d == 0 && b % d == 0) {
-      if (d > current_gcd) {
-        current_gcd = d;
-      }
-    }
+  if (a % b == 0) {
+    return b;
   }
-  return current_gcd;
+
+  return gcd(b, (a % b));
 }
 
 int main() {
