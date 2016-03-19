@@ -55,14 +55,14 @@ int main() {
   std::cin >> n >> capacity;
   vector<int> values(n);
   vector<int> weights(n);
-  vector<double> ratios(n);
+  // vector<double> ratios(n);
 
   for (int i = 0; i < n; i++) {
     std::cin >> values[i] >> weights[i];
-    ratios[i] = (double) values[i] / (double) weights[i];
+    // ratios[i] = (double) values[i] / (double) weights[i];
   }
 
-  double optimal_value = get_optimal_value(capacity, weights, values, ratios);
+  double optimal_value = get_optimal_value(capacity, weights, values);
 
   std::cout.precision(10);
   std::cout << optimal_value << std::endl;
